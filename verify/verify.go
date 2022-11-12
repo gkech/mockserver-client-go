@@ -1,3 +1,4 @@
+// Package verify ...
 package verify
 
 const (

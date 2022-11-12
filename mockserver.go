@@ -1,3 +1,4 @@
+// Package mockserver ...
 package mockserver
 
 import (
@@ -12,15 +13,15 @@ import (
 	"github.com/gkech/mockserver-client-go/verify"
 )
 
-// HttpClient is a HTTP client interface.
-type HttpClient interface {
+// HTTPClient is an HTTP client interface.
+type HTTPClient interface {
 	Do(req *http.Request) (*http.Response, error)
 }
 
 // Client is a mockserver for mockserver.
 type Client struct {
 	host   string
-	client HttpClient
+	client HTTPClient
 }
 
 // NewClient creates a new mockserver.
