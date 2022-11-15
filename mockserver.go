@@ -50,6 +50,7 @@ func (c *Client) CreateExpectation(expectation create.Expectation) error {
 	if err != nil {
 		return err
 	}
+	req.Header.Set("Content-Type", "application/json")
 
 	resp, err := c.sendRequest(req)
 	if err != nil {
@@ -58,7 +59,7 @@ func (c *Client) CreateExpectation(expectation create.Expectation) error {
 
 	if resp.StatusCode != http.StatusCreated {
 		return fmt.Errorf(
-			"error creating mockserver expectation. error code: %d and body: %s", resp.StatusCode, resp.Body)
+			"error creating mockserver expectation. received status code: %d with body: %s", resp.StatusCode, resp.Body)
 	}
 
 	return nil
