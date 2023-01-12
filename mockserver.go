@@ -81,6 +81,7 @@ func (c *Client) VerifyRequest(expectation verify.Expectation) error {
 	if err != nil {
 		return err
 	}
+	req.Header.Set("Content-Type", "application/json")
 
 	resp, err := c.sendRequest(req)
 	if err != nil {
