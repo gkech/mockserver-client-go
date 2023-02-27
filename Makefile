@@ -1,5 +1,5 @@
 lint: ## Perform linting
-	docker run --env=GOFLAGS=-mod=vendor --rm -v $(CURDIR):/app -w /app golangci/golangci-lint:v1.49 golangci-lint run --enable bodyclose,gofmt,revive,goimports,gosec,gocyclo --exclude-use-default=false --modules-download-mode=vendor --timeout=1m
+	docker run --env=GOFLAGS=-mod=vendor --rm -v $(CURDIR):/app -w /app golangci/golangci-lint:v1.51.2 golangci-lint run
 
 test: ## Run unit tests
 	go test ./... -mod=vendor -race -count=1
