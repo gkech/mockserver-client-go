@@ -21,7 +21,7 @@ type HTTPClient interface {
 // Client is a mockserver for mockserver.
 type Client struct {
 	host   string
-	client HTTPClient
+	client HTTPClientt
 }
 
 // NewClient creates a new mockserver.
